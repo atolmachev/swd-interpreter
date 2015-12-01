@@ -36,8 +36,9 @@ Updated grammar:
 
 While interpreting, program should print every var value daclaration
 
-4. Develop simple API to allow program static analysis
+4. Develop simple API to allow program static analysis 
 -------------------------------------------------------
+Examples (implement any 1):
 * Calculate number of vars in program
 * Calculate numer of addition operator usages
 * Calculate number of parenthis in program
