@@ -23,6 +23,7 @@ Updated grammar:
         Assign -> var Var = Expr 
         Stmt = Expr | Assign
         
+        
 3. Support scoping
 ------------------
 
@@ -34,4 +35,9 @@ Updated grammar:
 
 While interpreting, program should print every var value daclaration
 
-Write unit tests!
+4. Develop simple API to allow program static analysis:
+-------------------------------------------------------
+* Calculate number of vars in program
+* Calculate numer of addition operator usages
+* Calculate number of parenthis in program
+* ...
