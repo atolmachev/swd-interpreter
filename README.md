@@ -1,7 +1,8 @@
 # swd-interpreter
-Parser and interpreter of a simple mathcad-like language
+In this task you develop a small parser and interpreter of a simple mathcad-like language
+Based on existing codebase you will:
 
-1. (Done) Support parsing and evaluation of simple arithmetic expressions:
+1. (Done) Support parsing and evaluation of simple arithmetic expressions
 --------------------------------------------------------------------------
 
        (2 + 1) + (12)
@@ -35,7 +36,7 @@ Updated grammar:
 
 While interpreting, program should print every var value daclaration
 
-4. Develop simple API to allow program static analysis:
+4. Develop simple API to allow program static analysis
 -------------------------------------------------------
 * Calculate number of vars in program
 * Calculate numer of addition operator usages
