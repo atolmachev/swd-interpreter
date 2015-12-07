@@ -1,4 +1,4 @@
-public class ConstantExpression extends Expression {
+public class ConstantExpression implements Expression {
   private final int value;
 
   public ConstantExpression(int value) {
@@ -6,7 +6,7 @@ public class ConstantExpression extends Expression {
   }
 
   @Override
-  int evaluate() {
+  public int evaluate() {
     return value;
   }
 

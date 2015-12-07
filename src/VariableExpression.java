@@ -1,6 +1,6 @@
 import java.util.Map;
 
-public class VariableExpression extends Expression {
+public class VariableExpression implements Expression {
 
   private final String name;
 
@@ -16,7 +16,7 @@ public class VariableExpression extends Expression {
   }
 
   @Override
-  int evaluate() {
+  public int evaluate() {
     return 0;
   }
 
