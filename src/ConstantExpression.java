@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class ConstantExpression implements Expression {
   private final int value;
 
@@ -6,7 +8,7 @@ public class ConstantExpression implements Expression {
   }
 
   @Override
-  public int evaluate() {
+  public int evaluate(Map<String, Integer> context) {
     return value;
   }
 

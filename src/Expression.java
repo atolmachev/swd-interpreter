@@ -1,10 +1,12 @@
 import java.util.Map;
 
+import static java.util.Collections.emptyMap;
+
 public interface Expression {
 
-  int evaluate();
-
-  default int evaluate(Map<String, Integer> environment) {
-     return evaluate();
+  default int evaluate() {
+    return evaluate(emptyMap());
   }
+
+  int evaluate(Map<String, Integer> context);
 }

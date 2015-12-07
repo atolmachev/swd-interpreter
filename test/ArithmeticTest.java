@@ -1,18 +1,9 @@
 import org.junit.Test;
 
-import java.util.Map;
-
 import static java.util.Collections.singletonMap;
 import static org.junit.Assert.assertEquals;
 
 public class ArithmeticTest {
-  @Test
-  public void testEvalConst() throws Exception {
-    Expression expression = Parser.parse("92");
-    int actual = expression.evaluate();
-    assertEquals(92, actual);
-  }
-
   @Test
   public void testEvalOtherConst() throws Exception {
     Expression expression = Parser.parse("4");
@@ -21,7 +12,7 @@ public class ArithmeticTest {
   }
 
   @Test
-  public void testScopeInteger() throws Exception {
+  public void testScopedInteger() throws Exception {
     Expression expression = Parser.parse("(42)");
     int actual = expression.evaluate();
     assertEquals(42, actual);
@@ -67,9 +58,7 @@ public class ArithmeticTest {
 
   @Test
   public void testEvaluateInEnvironment() throws Exception {
-    Map<String, Integer> environment = singletonMap("x", 92);
-    Expression expression = Parser.parse("x");
-    assertEquals(92, expression.evaluate(environment));
-
+    Expression expression = Parser.parse("(x + 5)");
+    assertEquals(97, expression.evaluate(singletonMap("x", 92)));
   }
 }

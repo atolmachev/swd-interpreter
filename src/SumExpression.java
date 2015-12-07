@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class SumExpression implements Expression {
   private final Expression left;
   private final Expression right;
@@ -8,7 +10,7 @@ public class SumExpression implements Expression {
   }
 
   @Override
-  public int evaluate() {
-    return left.evaluate() + right.evaluate();
+  public int evaluate(Map<String, Integer> context) {
+    return left.evaluate(context) + right.evaluate(context);
   }
 }
