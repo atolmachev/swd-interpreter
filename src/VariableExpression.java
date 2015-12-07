@@ -1,5 +1,7 @@
 import java.util.Map;
 
+import static java.lang.String.format;
+
 public class VariableExpression implements Expression {
 
   private final String name;
@@ -22,6 +24,8 @@ public class VariableExpression implements Expression {
 
   @Override
   public int evaluate(Map<String, Integer> context) {
-    return context.get(name);
+    Integer integer = context.get(name);
+    if (integer == null) throw new ExecutionException(format("Variable %s not found", name));
+    return integer;
   }
 }
