@@ -9,4 +9,9 @@ public interface Expression {
   }
 
   int evaluate(Map<String, Integer> context);
+
+  default <T> T accept(Visitor<T> visitor) {
+    visitor.onExpression(this);
+    return visitor.get();
+  }
 }

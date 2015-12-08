@@ -13,4 +13,12 @@ public class SumExpression implements Expression {
   public int evaluate(Map<String, Integer> context) {
     return left.evaluate(context) + right.evaluate(context);
   }
+
+  @Override
+  public <T> T accept(Visitor<T> visitor) {
+    visitor.onExpression(this);
+    left.accept(visitor);
+    right.accept(visitor);
+    return visitor.get();
+  }
 }

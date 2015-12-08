@@ -18,11 +18,6 @@ public class VariableExpression implements Expression {
   }
 
   @Override
-  public int evaluate() {
-    return 0;
-  }
-
-  @Override
   public int evaluate(Map<String, Integer> context) {
     Integer integer = context.get(name);
     if (integer == null) throw new ExecutionException(format("Variable %s not found", name));

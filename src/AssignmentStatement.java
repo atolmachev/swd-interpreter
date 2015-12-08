@@ -14,4 +14,11 @@ public class AssignmentStatement implements Statement {
     context.put(var, expression.evaluate(context));
     return context;
   }
+
+  @Override
+  public <T> T accept(Visitor<T> visitor) {
+    visitor.onStatement(this);
+    expression.accept(visitor);
+    return visitor.get();
+  }
 }

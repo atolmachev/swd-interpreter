@@ -7,4 +7,6 @@ public interface Statement {
   default Map<String, Integer> evaluate() {
     return evaluate(new HashMap<>());
   }
+
+  <T> T accept(Visitor<T> visitor);
 }

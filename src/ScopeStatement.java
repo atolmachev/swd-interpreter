@@ -17,4 +17,13 @@ public class ScopeStatement implements Statement {
     }
     return scopeContext;
   }
+
+  @Override
+  public <T> T accept(Visitor<T> visitor) {
+    visitor.onStatement(this);
+    for (Statement statement : statements) {
+      statement.accept(visitor);
+    }
+    return visitor.get();
+  }
 }

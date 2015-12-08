@@ -20,7 +20,6 @@ public class Parser {
         return new AssignmentStatement(assignmentMatcher.replaceFirst("$1"), parseExpression(assignmentMatcher.replaceFirst("$2")));
       }
     }
-    int offset = 0;
     int minOffset = Arrays.stream(split).map(Parser::offsetLength).min(Integer::compare).get();
     if (minOffset == 0) {
       List<String> scope = new ArrayList<>();
