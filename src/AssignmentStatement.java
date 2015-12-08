@@ -1,8 +1,8 @@
 import java.util.Map;
 
 public class AssignmentStatement implements Statement {
-  String var;
-  Expression expression;
+  public final String var;
+  public final Expression expression;
 
   public AssignmentStatement(String var, Expression expression) {
     this.var = var;
